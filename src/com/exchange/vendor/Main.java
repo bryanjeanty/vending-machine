@@ -1,20 +1,28 @@
 package com.exchange.vendor;
 
-// import java.util.*;
-// import com.exchange.vendor.*;
+import java.util.*;
 
 public class Main {
   public static void main(String args[]) {
-    // create customer object
-    Customer carl = new Customer(100.00);
+    // create scanner object
+    Scanner scan = new Scanner(System.in);
+
+    // create customer object by requesting a starting networth
+    System.out.println("Please enter your current networth!");
+    double netWorth = scan.nextDouble();
+    Customer carl = new Customer(netWorth);
+
     // create vending machine object
     VendingMachine hal = new VendingMachine();
 
-    // set spending balance for customer
-    carl.setSpendingBalance(5.00);
-    carl.updateNetWorth(-5.00);
-    System.out.printf("Your Spending balance is: $ %.2f%n", carl.getSpendingBalance()); // $5.00
-    System.out.printf("Your networth is: $ %.2f%n", carl.getNetWorth()); // $95.00
+    // set spending balance for customer by requesting from user
+    System.out.println("Please enter your spending balance!");
+    double spendingBalance = scan.nextDouble();
+    carl.setSpendingBalance(spendingBalance);
+    carl.updateNetWorth(-spendingBalance);
+    System.out.println();
+    System.out.printf("Your Spending balance is: $ %.2f%n", carl.getSpendingBalance());
+    System.out.printf("Your networth is: $ %.2f%n", carl.getNetWorth());
 
     // view current vending machine inventory
     System.out.println();
@@ -24,15 +32,21 @@ public class Main {
     }
 
     // have customer select items
-    carl.setSelection(1);
-    carl.setSelection(3);
+    System.out.println("Enter your selection. Otherwise press 0 to stop!");
+    int selection = scan.nextInt();
+    while (selection != 0) {
+      carl.setSelection(selection);
+      selection = scan.nextInt();
+    }
 
     // have customer view selected items
     System.out.println();
     System.out.println(carl.getSelections());
 
     // have customer enter payment
+    System.out.println();
     hal.enterPayment(carl.getSpendingBalance());
+    carl.setSpendingBalance(0.00);
 
     // have customer view payment balance
     System.out.println();
@@ -52,5 +66,8 @@ public class Main {
     System.out.println();
     System.out.printf("Your current spending balance is: $ %.2f%n", carl.getSpendingBalance());
     System.out.printf("Your current networth is: $ %.2f%n", carl.getNetWorth());
+
+    // close scanner
+    scan.close();
   }
 }
