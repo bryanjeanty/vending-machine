@@ -20,6 +20,10 @@ public class Customer {
     return spendingBalance;
   }
 
+  public void updateNetWorth(double amount) {
+    this.netWorth += amount;
+  }
+
   public double getNetWorth() {
     return netWorth;
   }

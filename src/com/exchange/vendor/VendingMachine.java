@@ -7,14 +7,14 @@ public class VendingMachine {
   private static String productList[] = new String[] { "coke", "pepsi", "water", "sprite" };
   private static Map<String, Double> productPrices = new HashMap<String, Double>();
 
-  public VendingMachine(String args[]) {
+  public VendingMachine() {
     productPrices.put(productList[0], 1.25);
     productPrices.put(productList[1], 1.25);
     productPrices.put(productList[2], 0.75);
     productPrices.put(productList[3], 1.00);
   }
 
-  public void setPaymentBalance(double paymentBalance) {
+  public void enterPayment(double paymentBalance) {
     this.paymentBalance = paymentBalance;
   }
 
@@ -28,10 +28,10 @@ public class VendingMachine {
 
   public String provideItem(int selection) {
     if ((selection > 0) && (selection <= productList.length)) {
-      double productPrice = productPrices.get(productList[selection]);
-      if (productPrice >= paymentBalance) {
+      double productPrice = productPrices.get(productList[selection - 1]);
+      if (paymentBalance >= productPrice) {
         paymentBalance -= productPrice;
-        return productList[selection];
+        return productList[selection - 1];
       } else {
         return "Balance too low!";
       }
