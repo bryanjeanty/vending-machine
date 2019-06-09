@@ -1,6 +1,6 @@
 package app;
 
-public class VendingMachine {
+public class VendingMachineTest {
   // customer state
   private double customer_balance;
   private int customer_selection = 0;

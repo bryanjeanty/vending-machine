@@ -1,10 +1,10 @@
 package app;
 
-import app.VendingMachine;
+import app.VendingMachineTest;;
 
 public class App {
     public static void main(String[] args) {
-        VendingMachine vendor = new VendingMachine();
+        VendingMachineTest vendor = new VendingMachineTest();
 
         // print inventory test
         vendor.printInventory();
