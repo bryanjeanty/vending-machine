@@ -8,51 +8,63 @@
 
 ## Details Regarding each use case
 * **Use Case 1**:
-	1. Initiating Actor = Customer
-	2. Actor's Goal = To choose an item
-	3. Supporting Actor(s) = Vending Machine
-	4. Preconditions =
+	<br>
+	i. Initiating Actor = Customer <br>
+	ii. Actor's Goal = To choose an item <br>
+	iii. Supporting Actor(s) = Vending Machine <br>
+	iv. Preconditions =
 		a. Customer balance set to default
 		b. Vending machine inventory set to default
-	5. Postconditions =
+	<br>
+	v. Postconditions =
 		a. Customer balance unchanged
 		b. Vending machine inventory unchanged
 		c. message printed to screen
-	6. Flow of events for main success scenario
+	<br>
+	vi. Flow of events for main success scenario
 		Customer chooses item => Choice logged to system => success message printed to screen
-	7. Flow of events for extensions (alternate scenarios)
+	<br>
+	vii. Flow of events for extensions (alternate scenarios)
 		Customer chooses item => item not found => error message printed to screen
 
 * **Use Case 2**: 
-        1. Initiating Actor = Customer
-        2. Actor's Goal = Enter payment
-        3. Supporting Actor(s) = Vending Machine
-        4. Preconditions =
+        <br>
+	i. Initiating Actor = Customer <br>
+        ii. Actor's Goal = Enter payment <br>
+        iii. Supporting Actor(s) = Vending Machine <br>
+        iv. Preconditions =
                 a. Customer balance set to default
                 b. Vending machine inventory set to default
-        5. Postconditions =
+	<br>
+        v. Postconditions =
                 a. Customer balance reduced by price of item
                 b. Vending machine inventory unchanged
                 c. message printed to screen
-        6. Flow of events for main success scenario
+        <br>
+	vi. Flow of events for main success scenario
                 Customer enters payment => System checks if payment was received => success message printed to screen
-        7. Flow of events for extensions (alternate scenarios)
+        <br>
+	vii. Flow of events for extensions (alternate scenarios)
                 Customer enters payment => system could not log payment => error message printed to screen
 
 * **Use Case 3**: 
-        1. Initiating Actor = Customer
-        2. Actor's Goal = receive items
-        3. Supporting Actor(s) = Vending Machine
-        4. Preconditions =
+        <br>
+	i. Initiating Actor = Customer <br>
+        ii. Actor's Goal = receive items <br>
+        iii. Supporting Actor(s) = Vending Machine <br>
+        iv. Preconditions =
                 a. Customer balance set to default
                 b. Vending machine inventory set to default
-        5. Postconditions =
+        <br>
+	v. Postconditions =
                 a. Customer balance unchanged
                 b. Vending machine inventory depreciated by number of items requested
                 c. message printed to screen
-        6. Flow of events for main success scenario
+        <br>
+	vi. Flow of events for main success scenario
                 Customer requests items => System finds that balance is sufficient => success message printed to screen
-        7. Flow of events for extensions (alternate scenarios)
+        <br>
+	vii. Flow of events for extensions (alternate scenarios)
                 Customer requests items => item not found => error message printed to screen
 		Customer requests items => System finds balance insufficient => error message printed to screen
 
